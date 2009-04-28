@@ -23,7 +23,7 @@ class Prince
   #
   def initialize()
     # Finds where the application lives, so we can call it.
-    @exe_path = `which prince`.chomp
+    @exe_path = PRINCELY_CONFIG['prince_path'] || `which prince`.chomp
   	@style_sheets = ''
   	@log_file = "#{RAILS_ROOT}/log/prince.log"
   	@logger = RAILS_DEFAULT_LOGGER
